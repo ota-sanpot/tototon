@@ -814,21 +814,44 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
 .story-text p em{font-style:normal;color:var(--gold-soft);font-weight:700}
 
 .award-badge{
-  margin-top:64px;
-  display:inline-flex;flex-direction:column;align-items:flex-start;
-  padding:24px 28px;
+  margin-top:56px;
+  display:flex;align-items:center;gap:22px;
+  padding:20px 22px;
   border:1px solid rgba(184,153,104,.4);
-  max-width:420px;
+  background:rgba(184,153,104,.06);
+  max-width:500px;
 }
 .award-badge[data-empty="true"]{display:none}
+.award-photo{
+  flex:0 0 auto;
+  width:128px;
+  display:block;
+  border:1px solid rgba(184,153,104,.3);
+  background:#0a0908;
+  overflow:hidden;
+}
+.award-photo img{width:100%;height:auto;display:block;transition:transform 1.2s cubic-bezier(.16,1,.3,1)}
+.award-badge:hover .award-photo img{transform:scale(1.04)}
+.award-text{display:flex;flex-direction:column}
 .award-badge .lab{
   font-family:var(--ff-sans);font-size:10px;letter-spacing:.4em;
   color:var(--gold-soft);font-weight:500;
-  text-transform:uppercase;margin-bottom:10px;
+  text-transform:uppercase;margin-bottom:12px;
 }
 .award-badge p{
   font-family:var(--ff-mincho);font-weight:500;
-  font-size:13px;line-height:1.9;color:#fff;
+  font-size:14px;line-height:1.85;color:#fff;letter-spacing:.03em;
+}
+.award-badge p em{font-style:normal;color:var(--gold-soft);font-weight:700}
+.award-note{
+  margin-top:12px;
+  font-family:var(--ff-jp);font-weight:400;
+  font-size:11px;line-height:1.85;
+  color:rgba(255,255,255,.6);letter-spacing:.02em;
+}
+@media (max-width:560px){
+  .award-badge{gap:16px;padding:16px}
+  .award-photo{width:104px}
 }
 
 /* ============================================================
@@ -1268,8 +1291,14 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
         <p class="reveal reveal-delay-3">魚と、酒と、その夜のお客様と。<br>それだけを、ずっと続けています。</p>
 
         <div class="award-badge reveal" data-empty="false">
-          <span class="lab">Awarded</span>
-          <p>キリンビール『<em style="font-style:normal;color:#fff;font-weight:700;">全国うまいビール各店100選</em>』<br>2年連続選出店</p>
+          <div class="award-photo">
+            <img src="assets/award-kirin-beer.jpg" alt="キリン一番搾り 極上〈生〉認定店 2026 の認定証と一番搾り生ビール" loading="lazy">
+          </div>
+          <div class="award-text">
+            <span class="lab">Awarded</span>
+            <p>キリン一番搾り<br><em>「極上〈生〉認定店」</em> 2026 認定</p>
+            <span class="award-note">日々の品質管理が認められた、<br>生ビールのおいしい一杯を。</span>
+          </div>
         </div>
       </div>
     </div>
