@@ -496,6 +496,20 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
   color:var(--ink);
 }
 .daily-foot em{font-style:normal;color:var(--gold);font-weight:700}
+.daily-ig{
+  margin-top:26px;
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--ff-jp);
+  font-size:12.5px;letter-spacing:.06em;
+  color:var(--ink);font-weight:500;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:7px;
+  transition:color .2s ease,border-color .2s ease;
+}
+.daily-ig svg{width:16px;height:16px;flex:0 0 auto}
+.daily-ig:hover{color:var(--gold)}
+.daily-ig .arrow{font-family:var(--ff-sans);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.daily-ig:hover .arrow{transform:translateX(4px)}
 .daily-photo{position:relative;margin:0}
 .daily-board{
   position:relative;
@@ -1000,6 +1014,16 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
   font-size:13px;line-height:2;letter-spacing:.04em;
   color:rgba(255,255,255,.6);max-width:380px;
 }
+.foot-social{
+  margin-top:24px;
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-sans);
+  font-size:12px;letter-spacing:.18em;
+  color:var(--gold-soft);font-weight:500;
+  transition:color .2s ease;
+}
+.foot-social svg{width:17px;height:17px;flex:0 0 auto}
+.foot-social:hover{color:#fff}
 .foot .idx-lab{
   font-family:var(--ff-sans);font-size:10px;letter-spacing:.45em;
   color:var(--gold-soft);font-weight:500;
@@ -1352,6 +1376,11 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
         </div>
 
         <p class="daily-foot reveal reveal-delay-3">何度来ても、<em>違う海</em>を。<br>常連ほど、黒板が楽しい。</p>
+
+        <a class="daily-ig reveal reveal-delay-3" href="https://www.instagram.com/tototon1029/" target="_blank" rel="noopener noreferrer" aria-label="魚魚呑 公式Instagram（@tototon1029）で最新の黒板を見る">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+          最新の黒板は Instagram で <span class="arrow">→</span>
+        </a>
       </div>
 
       <figure class="daily-photo reveal reveal-delay-1">
@@ -1555,6 +1584,10 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
       <p class="brand-mark">魚魚呑</p>
       <span class="brand-lat">TOTOTON ／ Kamata Seafood &amp; Sake</span>
       <p class="brand-tag">朝〆の鮮魚と、全国の蔵元の純米酒。和酒だいにんぐ・蒲田駅 東口 徒歩2分。</p>
+      <a class="foot-social" href="https://www.instagram.com/tototon1029/" target="_blank" rel="noopener noreferrer" aria-label="魚魚呑 公式Instagram（@tototon1029）">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        <span>@tototon1029</span>
+      </a>
     </div>
     <div>
       <p class="idx-lab">Index</p>
