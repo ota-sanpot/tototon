@@ -463,6 +463,68 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
 .sig-note span{color:var(--gold)}
 
 /* ============================================================
+   DAILY — 毎日の黒板（日替わり・何度来ても）
+   ============================================================ */
+.daily{background:var(--paper-2);position:relative}
+.daily .chapter-num{top:48px;left:4%;color:rgba(15,12,9,.05)}
+.daily-grid{
+  position:relative;
+  display:grid;grid-template-columns:1fr;gap:48px;align-items:center;
+}
+@media (min-width:880px){
+  .daily-grid{grid-template-columns:.85fr 1.15fr;gap:72px}
+}
+.daily-rule{width:48px;height:1px;background:var(--gold);margin:30px 0;opacity:.8}
+.daily-text .lead{max-width:460px}
+.daily-text .lead em{font-style:normal;color:var(--gold);font-weight:700}
+.daily-tags{
+  margin-top:36px;
+  display:flex;flex-wrap:wrap;gap:10px 12px;
+}
+.daily-tags span{
+  font-family:var(--ff-sans);
+  font-size:11px;letter-spacing:.16em;
+  color:var(--text-2);font-weight:500;
+  padding:9px 16px;
+  border:1px solid var(--line);
+  background:var(--paper);
+}
+.daily-foot{
+  margin-top:40px;
+  font-family:var(--ff-mincho);font-weight:500;
+  font-size:clamp(16px,2vw,21px);line-height:1.85;letter-spacing:.06em;
+  color:var(--ink);
+}
+.daily-foot em{font-style:normal;color:var(--gold);font-weight:700}
+.daily-photo{position:relative;margin:0}
+.daily-board{
+  position:relative;
+  padding:10px;
+  background:var(--ink);
+  box-shadow:0 36px 70px -34px rgba(0,0,0,.5);
+}
+.daily-board::after{
+  content:"";position:absolute;inset:10px;
+  border:1px solid rgba(217,196,154,.22);
+  pointer-events:none;z-index:2;
+}
+.daily-board img{width:100%;height:auto;display:block}
+.daily-photo::before{
+  content:"";position:absolute;top:-1px;right:-1px;
+  width:54px;height:1px;background:var(--gold);z-index:3;
+}
+.daily-photo::after{
+  content:"";position:absolute;top:-1px;right:-1px;
+  width:1px;height:54px;background:var(--gold);z-index:3;
+}
+.daily-photo figcaption{
+  margin-top:18px;text-align:right;
+  font-family:var(--ff-jp);font-weight:400;
+  font-size:11px;letter-spacing:.04em;
+  color:var(--muted);
+}
+
+/* ============================================================
    SAKE — immersive 藍 panel
    ============================================================ */
 .sake{
@@ -1274,9 +1336,37 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
   </div>
 </section>
 
+<!-- ===== DAILY (毎日の黒板) ===== -->
+<section class="block daily" id="daily">
+  <div class="chapter-num" aria-hidden="true">V</div>
+  <div class="wrap">
+    <div class="daily-grid">
+      <div class="daily-text">
+        <p class="eyebrow reveal">— V —&nbsp;&nbsp;Daily</p>
+        <h2 class="h-display reveal reveal-delay-1" style="margin-top:20px;">黒板は、<br><em>毎日</em>書き換わる。</h2>
+        <div class="daily-rule reveal reveal-delay-1"></div>
+        <p class="lead reveal reveal-delay-2">魚は、その日の入荷しだい。<br>だから看板の三品に、<em>その日だけの一皿</em>を、黒板いっぱいに添えて。<br>刺身、蒸し、焼き、揚げ、季節の魚。来るたびに、顔ぶれが変わります。</p>
+
+        <div class="daily-tags reveal reveal-delay-2">
+          <span>本日の刺身</span><span>蒸し物</span><span>焼き物</span><span>揚げ物</span><span>季節の一皿</span><span>酒の肴</span>
+        </div>
+
+        <p class="daily-foot reveal reveal-delay-3">何度来ても、<em>違う海</em>を。<br>常連ほど、黒板が楽しい。</p>
+      </div>
+
+      <figure class="daily-photo reveal reveal-delay-1">
+        <div class="daily-board">
+          <img src="assets/daily-board.jpg" alt="毎日書き換わる魚魚呑の黒板メニュー。刺身・蒸し物・焼き物・揚げ物など、日替わりの一皿がずらりと並ぶ" loading="lazy">
+        </div>
+        <figcaption>例えば、ある日の黒板から。</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ===== STORY ===== -->
 <section class="block story" id="story">
-  <div class="chapter-num" aria-hidden="true">V</div>
+  <div class="chapter-num" aria-hidden="true">VI</div>
   <div class="wrap">
     <div class="story-grid">
       <div class="story-photo reveal">
@@ -1284,7 +1374,7 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
         <span class="story-vlat" aria-hidden="true">A NOTE FROM THE KITCHEN</span>
       </div>
       <div class="story-text">
-        <p class="eyebrow dark reveal">— V —&nbsp;&nbsp;Story</p>
+        <p class="eyebrow dark reveal">— VI —&nbsp;&nbsp;Story</p>
         <h2 class="h-display light reveal reveal-delay-1">魚と、酒と、<em>店主の仕事</em>。</h2>
         <p class="reveal reveal-delay-2">朝、市場へ。<br>その日の海と、その日の魚を見て、選ぶ。</p>
         <p class="reveal reveal-delay-2">店に戻り、捌き、寝かせ、整える。<br>合わせるのは、全国の蔵元から届く<em>純米酒</em>。</p>
@@ -1307,11 +1397,11 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
 
 <!-- ===== SPACE ===== -->
 <section class="block space" id="space">
-  <div class="chapter-num" aria-hidden="true">VI</div>
+  <div class="chapter-num" aria-hidden="true">VII</div>
   <div class="wrap">
     <div class="sig-head" style="margin-bottom:56px;">
       <div>
-        <p class="eyebrow reveal">— VI —&nbsp;&nbsp;Space</p>
+        <p class="eyebrow reveal">— VII —&nbsp;&nbsp;Space</p>
         <h2 class="h-display reveal reveal-delay-1" style="margin-top:20px;">夜の、<em>居場所</em>を。</h2>
       </div>
       <p class="lead reveal reveal-delay-2">半個室、テーブル、カウンター。<br>その日のシーンに、ちょうどいい席を。</p>
@@ -1365,11 +1455,11 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
 
 <!-- ===== HOURS ===== -->
 <section class="block hours" id="hours">
-  <div class="chapter-num" aria-hidden="true">VII</div>
+  <div class="chapter-num" aria-hidden="true">VIII</div>
   <div class="wrap">
     <div class="hours-grid">
       <div>
-        <p class="eyebrow reveal">— VII —&nbsp;&nbsp;Hours</p>
+        <p class="eyebrow reveal">— VIII —&nbsp;&nbsp;Hours</p>
         <h2 class="h-display reveal reveal-delay-1" style="margin:20px 0 28px;">営業の<em>ご案内</em>。</h2>
         <div class="hours-foot reveal reveal-delay-2">
           <p>週末は <em>深夜2時</em> までの営業。<br>仕事帰りの一杯、二次会、<br>夜更けの一皿に。</p>
@@ -1399,10 +1489,10 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
 
 <!-- ===== ACCESS ===== -->
 <section class="block access" id="access">
-  <div class="chapter-num" aria-hidden="true">VIII</div>
+  <div class="chapter-num" aria-hidden="true">IX</div>
   <div class="wrap">
     <div class="access-head">
-      <p class="eyebrow reveal">— VIII —&nbsp;&nbsp;Access</p>
+      <p class="eyebrow reveal">— IX —&nbsp;&nbsp;Access</p>
       <h2 class="h-display reveal reveal-delay-1" style="margin-top:20px;">蒲田駅 東口、<em>徒歩2分</em>。</h2>
     </div>
 
@@ -1442,7 +1532,7 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
     <img src="assets/reserve-sign.jpg" alt="" loading="lazy">
   </div>
   <div class="reserve-inner">
-    <p class="eyebrow dark reveal">— IX —&nbsp;&nbsp;Reserve</p>
+    <p class="eyebrow dark reveal">— X —&nbsp;&nbsp;Reserve</p>
     <h2 class="reserve-head reveal reveal-delay-1">お席を、<em>ご予約ください</em>。</h2>
     <p class="reserve-sub reveal reveal-delay-2">
       週末は <em>深夜2:00</em> までの営業。<br>
@@ -1473,11 +1563,12 @@ section.block{padding:clamp(90px,12vw,160px) 0;position:relative}
         <li><a href="#signature"><span class="n">II</span>Signature</a></li>
         <li><a href="#course"><span class="n">III</span>Course</a></li>
         <li><a href="#sake"><span class="n">IV</span>Sake</a></li>
-        <li><a href="#story"><span class="n">V</span>Story</a></li>
-        <li><a href="#space"><span class="n">VI</span>Space</a></li>
-        <li><a href="#hours"><span class="n">VII</span>Hours</a></li>
-        <li><a href="#access"><span class="n">VIII</span>Access</a></li>
-        <li><a href="#reserve"><span class="n">IX</span>Reserve</a></li>
+        <li><a href="#daily"><span class="n">V</span>Daily</a></li>
+        <li><a href="#story"><span class="n">VI</span>Story</a></li>
+        <li><a href="#space"><span class="n">VII</span>Space</a></li>
+        <li><a href="#hours"><span class="n">VIII</span>Hours</a></li>
+        <li><a href="#access"><span class="n">IX</span>Access</a></li>
+        <li><a href="#reserve"><span class="n">X</span>Reserve</a></li>
       </ul>
     </div>
   </div>
